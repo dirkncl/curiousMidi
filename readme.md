@@ -15,7 +15,7 @@ curiuosMidi dibuat untuk segala kemungkinan akses file midi (.mid, ,kar, .midi,.
     Playlist bisa dibuat via file .m3u juga bisa dibuat dengan kombinasi elemen
     “div dan li” dan bisa dengan elemen “select option” atau dengan elemen table dan dengan beragam cara
 
-    Melalui anchor href seperti \<ahref=”javascript:midiPlay(file)”\>file-description\</a\>
+    Melalui anchor href seperti <a href=”javascript:midiPlay(file)”>file-description</a>
 
     Juga bisa event onclick pada elemen div atau button dan lain-lain.
 
@@ -41,12 +41,12 @@ curiuosMidi is made for all possible access to midi files (.mid, kar, .midi,.rmi
     Playlists can be created via .m3u files can also be created with a combination of elements
     "Div and li" and can be with the "select option" element and in various ways
 
-    Through anchor href like \ <a href = "javascript: midiPlay (file)" \> file-description \ </ a \>
+    Through anchor href like <a href = "javascript: midiPlay (file)"> file-description </a>
 
     It can also be an onclick event on the div or button element and others.
 
     The parameter parameter, midi, we input from the file itself with the word
     others are single command lines like:
-    namafile.html? https: //website.com/file/midi/penanyi - lagu.[mid[midi[kar[rmi]]]]
+    namafile.html?https://website.com/file/midi/penanyi - lagu.[mid[midi[kar[rmi]]]]
 
     The sound system is still simple but still good enough to be heard.
