@@ -1,9 +1,10 @@
 ﻿
 ## curiousMidi
 
->   curiousMidi adalah midi player serba guna, kebanyakan midi player berbasis
->   browser sudah memiliki playlist sendiri sehingga kita dipaksa hanya mendengar lagu-lagu midi yang itu-itu saja.
->   Kenapa curious?... karena hingga kini saya masih penasaran dengan Midi untuk browser
+> curiousMidi adalah midi player serba guna, kebanyakan midi player berbasis
+> browser sudah memiliki playlist sendiri sehingga kita dipaksa hanya mendengar lagu-lagu midi yang itu-itu saja.
+> Kenapa curious?... karena hingga kini saya masih penasaran dengan Midi untuk browser
+
 curiuosMidi dibuat untuk segala kemungkinan akses file midi (.mid, ,kar, .midi,.rmi) misalnya:
 
 1.  Dengan membuat playlist dengan berbagai macam cara.
