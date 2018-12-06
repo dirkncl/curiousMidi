@@ -24,6 +24,13 @@ curiuosMidi dibuat untuk segala kemungkinan akses file midi (.mid, ,kar, .midi,.
     namafile.html?https://website.com/file/midi/pennyanyi – lagu.[mid[midi[kar[rmi]]]]
 
     Sound system yang ada masih sederhana tapi masih cukup baik untuk didengar.
+    
+### Test    
+    - https://dirkncl.github.io/curiousMidi/TestPlaylist.html
+    
+    - https://dirkncl.github.io/curiousMidi/Test.html
+    
+    - https://dirkncl.github.io/curiousMidi/sample.html
 
     
 ## curiousMidi
