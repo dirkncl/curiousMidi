@@ -30,8 +30,6 @@ curiuosMidi dibuat untuk segala kemungkinan akses file midi (.mid, ,kar, .midi,.
 
 - https://dirkncl.github.io/curiousMidi/Test.html
 
-- https://dirkncl.github.io/curiousMidi/sample.html
-
 - https://dirkncl.github.io/curiousMidi/?https%3A%2F%2Fraw.githubusercontent.com%2Fdirkncl%2FkoleksiMidi%2Fmaster%2FDangdut%2FMeggy+Z+-+Sakit+Gigi%28kn1500%29.mid
 
     
