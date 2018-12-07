@@ -21,7 +21,7 @@ curiuosMidi dibuat untuk segala kemungkinan akses file midi (.mid, ,kar, .midi,.
     Juga bisa event onclick pada elemen div atau button dan lain-lain.
 
     Argument parameter yaitu midi kita input dari file itu sendiri dengan kata lain berupa command line tunggal seperti:
-    namafile.html?https://website.com/file/midi/pennyanyi – lagu.[mid[midi[kar[rmi]]]]
+    namafile.html?https://website.com/file/midi/penyanyi – lagu.[mid[midi[kar[rmi]]]]
 
     Sound system yang ada masih sederhana tapi masih cukup baik untuk didengar.
 
@@ -49,6 +49,6 @@ curiuosMidi is made for all possible access to midi files (.mid, kar, .midi,.rmi
 
     The parameter parameter, midi, we input from the file itself with the word
     others are single command lines like:
-    namafile.html? https://website.com/file/midi/penanyi - lagu.[mid[midi[kar[rmi]]]]
+    namafile.html? https://website.com/file/midi/penyanyi - lagu.[mid[midi[kar[rmi]]]]
 
     The sound system is still simple but still good enough to be heard.
