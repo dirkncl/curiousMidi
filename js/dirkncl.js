@@ -81,11 +81,8 @@ var context,
       }
     }
   }(),
-  //curiousMidiJS = "lib/curiousMidi.js",
-  curiousMidiJS = "D:/dirk/fungsional/0-editorCodemirror/dirkncl.github.io-master/curiousMidi/lib/curiousMidi.js",
-  
-  //paths = "../muki-io/",
-  paths = "D:/dirk/fungsional/0-editorCodemirror/dirkncl.github.io-master/muki-io/",
+  curiousMidiJS = "lib/curiousMidi.js",
+  paths = "../muki-io/",
   InputChannel = 1,
   OutputChannel = 2,
   source = 0,
@@ -329,8 +326,7 @@ function include(e) {
   }
 //}  
 }
-//include("js/interface.js");
-include("D:/dirk/fungsional/0-editorCodemirror/dirkncl.github.io-master/curiousMidi/js/interface.js");
+include("js/interface.js");
 var ls = location.search,
   par = "";
   - 1 != (par = decodeURIComponent(ls).replace(/\+/g, " ").replace("?", "")).indexOf("&") && ((par = par.split("&"))[1] = "", par = par[0]), "" != par && midiPlay(par);
