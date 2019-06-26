@@ -224,27 +224,10 @@ function loadMissingPatch(t, e, o) {
 }
 
 function midiPlay(e) {
-  // One-liner to resume playback when user interacted with the page.
-//document.querySelector('button').addEventListener('click', function() {
-  
-//});
   context.resume().then(()=>{console.log('Playback resumed successfully');});    
   midiStop();
-  /*
-  for(var n = "", t = 0; t < document.scripts.length; t++) {
-    document.scripts[t].src;
-    n = curiousMidiJS
-  }
-  for(t = 0; t < document.scripts.length; t++) {
-    if(n == document.scripts[t].src) return
-  }*/
-  //loadFileTextStore=[];
   var cMjs = curiousMidiJS;
   ConsoleLog("Loading curiousMidi ... "),
-  /*SciptLoad(n, function() {
-    
-    midiFileLoader(e)
-  })*/
   loadFileText(cMjs, function() {
     
     midiFileLoader(e)
@@ -299,18 +282,6 @@ var ConsoleLog = function(e) {
   };
 var includeStore = [];
 function include(e) {
-  /*
-  var n = document.getElementsByTagName("script")[0],
-      t = document.createElement("script");
-  t.onerror = function() {
-    ConsoleLog("Where your script " + e)
-  },
-  t.src = e,
-  t.type = "text/javascript",
-  n.parentNode.insertBefore(t, n)
-  */
-
-//function loadFileText(e){
   if(!(includeStore.includes(e))){
     var scr = new XMLHttpRequest();
     scr.overrideMimeType('text/plain; charset=utf-8');
@@ -324,12 +295,11 @@ function include(e) {
     }
     scr.send(null);
   }
-//}  
 }
 include("js/interface.js");
 var ls = location.search,
   par = "";
-  - 1 != (par = decodeURIComponent(ls).replace(/\+/g, " ").replace("?", "")).indexOf("&") && ((par = par.split("&"))[1] = "", par = par[0]), "" != par && midiPlay(par);
+  -1 != (par = decodeURIComponent(ls).replace(/\+/g, " ").replace("?", "")).indexOf("&") && ((par = par.split("&"))[1] = "", par = par[0]), "" != par && midiPlay(par);
 
   
   
