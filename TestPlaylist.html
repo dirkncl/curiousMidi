@@ -571,7 +571,50 @@ window.onload=function(){
        //time_button.value=m+":"+s;
        time_button.value=m+":"+s;
     };
-}
+};
+document.addEventListener("keydown", function(e) {
+  if(27 == e.keyCode || !(KeyState || e.metaKey)) {
+    switch(e.ctrlKey){
+      case false:
+        switch (e.keyCode) {
+          case 9:
+            e.preventDefault(), midiStop();
+            shuffle();
+            break;
+          case 37:
+            e.preventDefault();
+            midiStop();
+            prevSong();
+            break;
+          case 39:
+            e.preventDefault();
+            midiStop();
+            nextSong();
+            break;
+            
+        };break;
+      case true:
+        switch (e.keyCode) {
+          case 83:
+            e.preventDefault();
+            document.getElementById('togglesearch').click();
+            break;
+          case 76:
+            e.preventDefault();
+            document.getElementById('togglesong').click();
+            break;
+          case 70:
+            e.preventDefault();
+            document.querySelector("#myfiles").click();
+            break;
+          case 68:
+            e.preventDefault();
+            document.querySelector("#myDir").click();
+            break;
+        };break;
+    }
+  }
+});
 </script>		
 
 </head>
