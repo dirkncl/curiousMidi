@@ -107,64 +107,31 @@ function loadFileText(file, cb){
     rawFile.open("GET", file, true);
     rawFile.onload = function () {
       var ScriptBuff = rawFile.responseText;
-      //if(rawFile.readyState === 4) {
-      //  if(rawFile.status === 200 || rawFile.status == 0) {
          eval.apply( window, [ScriptBuff]);
          cb();
-         
-        //}
-      //}
     }
     rawFile.send(null);
   }
 }    
-
-
-function SciptLoad(e, n) {
-  var t = document.getElementsByTagName("script")[0],
-      o = document.createElement("script");
-  o.onload = function() {
-    n()
-  },
-  o.onerror = function() {
-    ConsoleLog("Where your script " + e)
-  },
-  o.src = e,
-  o.type = "text/javascript",
-  t.parentNode.insertBefore(o, t)
-}
 
 document.addEventListener("keydown", function(e) {
   if(27 == e.keyCode || !(KeyState || e.metaKey)) {
     switch(e.ctrlKey){
       case false:
         switch (e.keyCode) {
-          case 9:
-            e.preventDefault(), midiStop();
-            shuffle();
-            break;
           case 32:
             e.preventDefault(), midiStop();
             break;
-          case 38://upArrow
+            
+          case 38:
             e.preventDefault();
             SoundsOutput.increase_vol();
             console.log(SoundsOutput.current_vol());
             break;
-          case 40://downArrow
+          case 40:
             e.preventDefault();
             SoundsOutput.decrease_vol();
             console.log(SoundsOutput.current_vol());
-            break;
-          case 37://leftArrow
-            e.preventDefault();
-            midiStop();
-            prevSong();
-            break;
-          case 39://rightArrow
-            e.preventDefault();
-            midiStop();
-            nextSong();
             break;
         };break;
       case true:
@@ -173,27 +140,11 @@ document.addEventListener("keydown", function(e) {
             e.preventDefault();
             SoundsOutput.toggle_compressor();
             break;
-          case 83://s
-            e.preventDefault();
-            document.getElementById('togglesearch').click();
-            break;
-          case 76://l
-            e.preventDefault();
-            document.getElementById('togglesong').click();
-            break;
-          case 70://f
-            e.preventDefault();
-            document.querySelector("#myfiles").click();
-            break;
-          case 68://d
-            e.preventDefault();
-            document.querySelector("#myDir").click();
-            break;
-            
         };break;
     }
   }
 });
+
 var midiPlayEvent = {};
 
 function nextWaveRead(e) {
