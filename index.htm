@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>curiousMidi</title>
+     <script>
+    function loadScript(file){
+    var scripts = new XMLHttpRequest();
+    scripts.overrideMimeType('text/plain; charset=utf-8');
+    scripts.open("GET", file, true);
+    scripts.onload = function () {
+      var ScriptBuff = scripts.responseText;
+         eval.apply( window, [ScriptBuff]);
+    }
+    scripts.send(null);
+    };
+    loadScript('js/dirkncl.js');
+    
+    </script>
+    <style>
+    body {
+      
+      background: url("https://4.bp.blogspot.com/-Z4sve3fJ7to/W5DdH1aFU2I/AAAAAAAACd8/MpQG3ZbI-V4g5m7BmCGnnSb-8Dr6pp4jgCLcBGAs/s1600/most-beautiful-waterfall-iceland-seljalandsfoss.jpg") no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      
+    }
+    </style>
+  </head>
+  <body style="background-color:black"> </body>
+</html>
