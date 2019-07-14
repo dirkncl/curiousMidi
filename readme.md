@@ -5,7 +5,7 @@
 > browser sudah memiliki playlist sendiri sehingga kita dipaksa hanya mendengar lagu-lagu midi yang itu-itu saja.
 > Kenapa curious?... karena hingga kini saya masih penasaran dengan Midi untuk browser
 
-curiuosMidi dibuat untuk segala kemungkinan akses file midi (.mid, ,kar, .midi,.rmi) misalnya:
+curiuosMidi dibuat untuk segala kemungkinan akses file midi (.mid, ,kar, .midi) misalnya:
 
 1.  Dengan membuat playlist dengan berbagai macam cara.
 
@@ -21,7 +21,7 @@ curiuosMidi dibuat untuk segala kemungkinan akses file midi (.mid, ,kar, .midi,.
     Juga bisa event onclick pada elemen div atau button dan lain-lain.
 
     Argument parameter yaitu midi kita input dari file itu sendiri dengan kata lain berupa command line tunggal seperti:
-    namafile.html?https://website.com/file/midi/pennyanyi – lagu.[mid[midi[kar[rmi]]]]
+    namafile.html?https://website.com/file/midi/pennyanyi – lagu.[mid[midi[kar]]]
 
     Sound system yang ada masih sederhana tapi masih cukup baik untuk didengar.
     
@@ -39,7 +39,7 @@ curiuosMidi dibuat untuk segala kemungkinan akses file midi (.mid, ,kar, .midi,.
 > The browser already has its own playlist so we are forced to only listen to the midi songs, that's all.
 > Why is curious?... because until now I am still curious about Midi for browsers
 
-curiuosMidi is made for all possible access to midi files (.mid, kar, .midi,.rmi) for example:
+curiuosMidi is made for all possible access to midi files (.mid, kar, .midi) for example:
 
 1. By creating playlists in various ways.
 
@@ -56,6 +56,6 @@ curiuosMidi is made for all possible access to midi files (.mid, kar, .midi,.rmi
 
     The parameter parameter, midi, we input from the file itself with the word
     others are single command lines like:
-    namafile.html? https: //website.com/file/midi/penanyi - lagu.[mid[midi[kar[rmi]]]]
+    namafile.html? https: //website.com/file/midi/penanyi - lagu.[mid[midi[kar]]]
 
     The sound system is still simple but still good enough to be heard.
