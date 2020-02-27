@@ -33,22 +33,11 @@ var scenes = [
   {name: 'V05HAUNT',title: 'Haunted Castle Ruins - Night'},
   {name: 'V10',     title: 'Deep Swamp - Day'},
   {name: 'V11AM',   title: 'Approaching Storm - Day'},
-  {name: 'V13',     title: 'Pond Ripples - Dawn'},
   {name: 'V17',     title: 'Ice Wind - Day'},
   {name: 'V19PM',   title: 'Mountain Stream - Afternoon'},
   {name: 'V25HEAT', title: 'Desert Heat Wave - Day'},
   {name: 'V27',     title: 'Magic Marsh Cave - Night'},
   {name: 'V29FOG',  title: 'Seascape - Fog'},
-  {name: 'TESTRAMP',title: 'Test Image'},
-  {name: 'V05AM',   title: 'Haunted Castle Ruins - Morning'},
-  {name: 'V18',     title: '---'},
-  {name: 'V21',     title: '---'},
-  {name: 'V22',     title: '---'},
-  {name: 'V23',     title: '---'},
-  {name: 'V24',     title: '---'},
-  {name: 'V25',     title: '---'},
-  {name: 'V25PM',   title: '---'},
-  {name: 'V26',     title: 'Winter Forest - Day'},
   {name: 'V26PM',   title: 'Winter Forest - Afternoon'}
 ];
 
