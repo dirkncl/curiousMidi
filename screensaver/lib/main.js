@@ -39,6 +39,7 @@ var scenes = [
   {name: 'V27',     title: 'Magic Marsh Cave - Night'},
   {name: 'V29FOG',  title: 'Seascape - Fog'},
   {name: 'V26PM',   title: 'Winter Forest - Afternoon'}
+  
 ];
 
 var CanvasCycle = {
