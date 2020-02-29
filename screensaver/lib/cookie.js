@@ -119,5 +119,4 @@ class CookieTree {
 	  imports("lib/bitmap.js");
     imports("lib/tween.js");
   }
-  //imports("lib/tools.js");
-  //scriptEval("lib/scenes.js");
+ 
