@@ -23,6 +23,14 @@
   </head>
   <body style="background-color:black"> </body>
   <script>
+    var argm = "";
+    -1 != (argm = decodeURIComponent(location.search).replace(/\+/g, " ").replace("?", "")).indexOf("&") && ((argm = argm.split("&"))[1] = "", argm = argm[0]);
+  
+    var midi = argm;
+    document.title = decodeURIComponent(midi.split("/").pop());
+    document.body.innerHTML='<center><button style="position:fixed;z-index:10"><a id="playmidi">Play</a></button></center>';
+    document.getElementById("playmidi").href = "javascript:midiPlay(decodeURIComponent(midi))";
+    
       var body=document.body;
       var ctr = document.createElement("center");
       ctr.style["border-style"]="none"
