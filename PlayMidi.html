@@ -9,7 +9,7 @@
   var param = {};
   window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {param[key] = value;});
   var midi = param.midi;
-  var bgr = param.bg;
+  var bgr = param.bg||"https://4.bp.blogspot.com/-Z4sve3fJ7to/W5DdH1aFU2I/AAAAAAAACd8/MpQG3ZbI-V4g5m7BmCGnnSb-8Dr6pp4jgCLcBGAs/s1600/most-beautiful-waterfall-iceland-seljalandsfoss.jpg";
   document.title = decodeURIComponent(midi.split("/").pop());
   document.body.style = `
       background: url(${bgr}) no-repeat center center fixed; 
