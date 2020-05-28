@@ -1,0 +1,27 @@
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+<script>
+  var param = {};
+  window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {param[key] = value;});
+  var midi = param.midi;
+  var bgr = param.bg;
+  document.title = midi.split("/").pop();
+  document.body.style = `
+      background: url(${bgr}) no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      `    
+  document.body.innerHTML='<center><button style="position:fixed;z-index:10"><a id="playmidi">Play</a></button></center>';
+  document.getElementById("playmidi").href = decodeURIComponent(midi);
+</script>  
+</body>
+
+<script src="js/toIframe.js"></script>
+</html>
