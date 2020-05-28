@@ -10,7 +10,7 @@
   window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {param[key] = value;});
   var midi = param.midi;
   var bgr = param.bg;
-  document.title = midi.split("/").pop();
+  document.title = decodeURIComponent(midi.split("/").pop());
   document.body.style = `
       background: url(${bgr}) no-repeat center center fixed; 
       -webkit-background-size: cover;
