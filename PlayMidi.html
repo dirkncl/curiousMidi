@@ -31,7 +31,7 @@
       
       if(info){
         (sty=document.createElement("style")).textContent='#info::-webkit-scrollbar {height: 8px;width: 8px;background: #404040;}#info::-webkit-scrollbar-thumb{background: #909090;border-radius: 4ex;}#info ::-webkit-scrollbar-corner{background: #000;}',document.head.appendChild(sty)
-        document.body.innerHTML+='<div id="Info" style="position:fixed;max-height:60%;max-width:30%;left:35%;right:35%;bottom:10px;z-index:10;overflow-y:scroll;overflow-x:visible;background-color:black;opacity:0.7"><center><header style="background-color:blue;color:ivory"></header></center><article style="color:gold;padding:10px;"></article></div>';
+        document.body.innerHTML+='<div id="Info" style="position:fixed;max-height:60%;max-width:30%;left:35%;right:35%;bottom:10px;z-index:10;overflow-y:auto;overflow-x:visible;background-color:black;opacity:0.7"><center><header style="background-color:blue;color:ivory"></header></center><article style="color:gold;padding:10px;"></article></div>';
         
         var Text = decodeURIComponent(info);
         
