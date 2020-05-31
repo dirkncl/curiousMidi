@@ -71,7 +71,7 @@
           document.getElementById("Info").getElementsByTagName("article")[0].innerHTML=article;
         }
         
-        else if(Text.includes("selflyrics~~")||Text.includes("selflyrics!!")){
+        else if(Text.includes("selflyrics~~")||Text.includes("selflyrics!!")||||Text.includes("selflyrics//")){
           var header = decodeURIComponent(midi.split("/").pop().replace('.'+midi.split(".").pop(),''))
           console.log(header)
           GetMidiLyrics(decodeURIComponent(midi),function(data){
@@ -95,7 +95,7 @@
       }
       
       if(!midi&&!info){
-        alert("How To Use:: PlayMidi.html?midi=midiURL&img=imageURL&info=infoText|infoFileTextURL\n1. midi: midiURL or karURL or rmiURL\n2. img: imageURL - jpg or gif or png\n3. info: infoText - header title :: article linefeed with '\\n' or  infoFileTextURL - file.txt or selflyrics~~ get midi lyric if any ")
+        alert("How To Use:: PlayMidi.html?midi=midiURL&img=imageURL&info=infoText|infoFileTextURL\n1. midi: midiURL or karURL or rmiURL\n2. img: imageURL - jpg or gif or png\n3. info: infoText - header title :: article linefeed with '\\n' or  infoFileTextURL - file.txt or selflyrics~~ or selflyrics!! selflyrics// get midi lyric if any ")
       }
     
     </script>  
