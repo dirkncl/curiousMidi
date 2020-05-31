@@ -1,8 +1,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title></title><script src="js/getMidiLyrics.js"></script>
   </head>
   
   <body>
@@ -71,9 +70,32 @@
           document.getElementById("Info").getElementsByTagName("header")[0].textContent=header;
           document.getElementById("Info").getElementsByTagName("article")[0].innerHTML=article;
         }
+        
+        else if(Text.includes("selflyrics~~")){
+          var header = decodeURIComponent(midi.split("/").pop().replace('.'+midi.split(".").pop(),''))
+          console.log(header)
+          GetMidiLyrics(decodeURIComponent(midi),function(data){
+            var lyr='';
+            var midiFile = new MIDIFile(data);
+            var lyrics = midiFile.getLyrics();
+            
+            for (var idx = 0; idx < lyrics.length; idx++) {
+              lyr+=lyrics[idx].text
+            }
+            if(lyr.length>1){
+              var article = lyr.replace(/\\/g,'').replace(/\//g,'<br>'); 
+              //console.log(lyr.replace(/\\/g,'').replace(/\//g,'\n')); // The text content to be displayed
+              document.getElementById("Info").getElementsByTagName("header")[0].textContent=header;
+              document.getElementById("Info").getElementsByTagName("article")[0].innerHTML=article;
+            }
+          })
+          
+        
+        }
       }
+      
       if(!midi&&!info){
-        alert("How To Use:: PlayMidi.html?midi=midiURL&img=imageURL&info=infoText|infoFileTextURL\n1. midi: midiURL or karURL or rmiURL\n2. img: imageURL - jpg or gif or png\n3. info: infoText - header title :: article linefeed with '\\n' or  infoFileTextURL - file.txt ")
+        alert("How To Use:: PlayMidi.html?midi=midiURL&img=imageURL&info=infoText|infoFileTextURL\n1. midi: midiURL or karURL or rmiURL\n2. img: imageURL - jpg or gif or png\n3. info: infoText - header title :: article linefeed with '\\n' or  infoFileTextURL - file.txt or selflyrics~~ get midi lyric if any ")
       }
     
     </script>  
