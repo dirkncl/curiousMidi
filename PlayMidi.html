@@ -75,7 +75,7 @@
           midi = decodeURIComponent(midi);
           var header = midi.split("/").pop().replace('.'+midi.split(".").pop(),'');
           
-          console.log(header)
+          //console.log(header)
           GetMidiLyrics(midi,function(data){
             var lyr='';
             var midiFile = new MIDIFile(data);
