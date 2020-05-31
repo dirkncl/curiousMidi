@@ -15,10 +15,11 @@
       bgr = decodeURIComponent(bgr);
       document.body.style = `
           background: url(${bgr}) no-repeat center center fixed; 
-          -webkit-background-size: cover;
-          -moz-background-size: cover;
-          -o-background-size: cover;
-          background-size: cover;
+          -webkit-background-size: contain;
+          -moz-background-size: contain;
+          -o-background-size: contain;
+          background-size: contain;
+          background-color: black;
       `;
        document.body.innerHTML='';  
       if(midi){
