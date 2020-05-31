@@ -22,10 +22,10 @@
       `;
        document.body.innerHTML='';  
       if(midi){
-        
-        document.title = decodeURIComponent(midi.split("/").pop());
+        midi = decodeURIComponent(midi);
+        document.title = midi.split("/").pop();
         document.body.innerHTML+='<center><button style="position:fixed;top:0;z-index:10;"><a id="playmidi" style="text-decoration:none">Play</a></button></center>';
-        document.getElementById("playmidi").href = decodeURIComponent(midi);
+        document.getElementById("playmidi").href = midi;
       }
       
       if(info){
@@ -72,9 +72,11 @@
         }
         
         else if(Text.includes("selflyrics~~")||Text.includes("selflyrics!!")||Text.includes("selflyrics//")){
-          var header = decodeURIComponent(midi.split("/").pop().replace('.'+midi.split(".").pop(),''))
+          midi = decodeURIComponent(midi);
+          var header = midi.split("/").pop().replace('.'+midi.split(".").pop(),'');
+          
           console.log(header)
-          GetMidiLyrics(decodeURIComponent(midi),function(data){
+          GetMidiLyrics(midi,function(data){
             var lyr='';
             var midiFile = new MIDIFile(data);
             var lyrics = midiFile.getLyrics();
