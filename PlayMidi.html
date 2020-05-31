@@ -85,7 +85,8 @@
               lyr+=lyrics[idx].text
             }
             if(lyr.length>1){
-              var article = lyr.replace(/\\/g,'').replace(/\//g,'<br>'); 
+              
+              var article = lyr.replace(/\/\\/g,'').replace(/\\/g,'<br><br>').replace(/\//g,'<br>'); 
               //console.log(lyr.replace(/\\/g,'').replace(/\//g,'\n')); // The text content to be displayed
               document.getElementById("Info").getElementsByTagName("header")[0].textContent=header;
               document.getElementById("Info").getElementsByTagName("article")[0].innerHTML=article;
