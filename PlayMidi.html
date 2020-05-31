@@ -71,7 +71,7 @@
           document.getElementById("Info").getElementsByTagName("article")[0].innerHTML=article;
         }
         
-        else if(Text.includes("selflyrics~~")){
+        else if(Text.includes("selflyrics~~")||Text.includes("selflyrics!!")){
           var header = decodeURIComponent(midi.split("/").pop().replace('.'+midi.split(".").pop(),''))
           console.log(header)
           GetMidiLyrics(decodeURIComponent(midi),function(data){
