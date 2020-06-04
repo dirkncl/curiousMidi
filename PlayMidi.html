@@ -57,8 +57,8 @@
           }
           var header = fn;
           getText(Text, function(txt){
-            //var article = txt;
-            var article = txt.replace(/ /g,"&nbsp");
+            var article = txt;
+            //var article = txt.replace(/ /g,"&nbsp");
             document.getElementById("Info").getElementsByTagName("header")[0].textContent=header;
             document.getElementById("Info").getElementsByTagName("article")[0].innerHTML=article;
         
