@@ -13,6 +13,7 @@
       var midi = param.midi;
       var info = param.info;
       var ssTime = param.sstime;
+      var charset = param.charset;
 
       
       var bgr = param.img||"https://4.bp.blogspot.com/-Z4sve3fJ7to/W5DdH1aFU2I/AAAAAAAACd8/MpQG3ZbI-V4g5m7BmCGnnSb-8Dr6pp4jgCLcBGAs/s1600/most-beautiful-waterfall-iceland-seljalandsfoss.jpg";
@@ -32,13 +33,26 @@
         document.body.innerHTML+='<center><button style="position:fixed;top:0;z-index:10;"><a id="playmidi" style="text-decoration:none">Play</a></button></center>';
         document.getElementById("playmidi").href = midi;
       }
+     
+      var char_set;
+      switch  (charset){
+        case "utf8":char_set="utf-8";break;
+        case "iso88591":char_set="iso-8859-1";break;
+        case "iso88592":char_set="iso-8859-2";break;
+        case "iso88593":char_set="iso-8859-3";break;
+        case "iso88594":char_set="iso-8859-4";break;
+        case "iso88595":char_set="iso-8859-5";break;
+        case "iso88596":char_set="iso-8859-6";break;
+        case "iso88597":char_set="iso-8859-7";break;
+        case "iso88598":char_set="iso-8859-8";break;
+      }      
       
       if(info){
         (sty=document.createElement("style")).textContent='#info::-webkit-scrollbar {height: 8px;width: 8px;background: #404040;}#info::-webkit-scrollbar-thumb{background: #909090;border-radius: 4ex;}#info ::-webkit-scrollbar-corner{background: #000;}',document.head.appendChild(sty)
         document.body.innerHTML+='<div id="Info" style="position:fixed;max-height:60%;max-width:30%;left:35%;right:35%;bottom:10px;z-index:10;overflow-y:auto;overflow-x:visible;background-color:black;opacity:0.7"><center><header style="background-color:blue;color:ivory"></header></center><article style="color:gold;padding:10px;"></article></div>';
         
         var Text = decodeURIComponent(info);
-        
+        var omt = char_set||"utf-8";
         if(Text.includes("file::")){
           Text = Text.split("::")[1];
           var ext = Text.split(".").pop();
@@ -48,7 +62,7 @@
             var result="";
             var xr = new XMLHttpRequest();
             //xr.overrideMimeType("text/plain; charset=iso-8859-1");
-            xr.overrideMimeType("text/plain; charset=utf-8");
+             xr.overrideMimeType("text/plain; charset="+omt);
             xr.onload = function() {
               var res =xr.responseText.split("\n");
               for(var i = 0;i<res.length;i++){
