@@ -1,15 +1,19 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title></title><script src="js/getMidiLyrics.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title></title><script src="js/getMidiLyrics.js"></script>    
   </head>
   
   <body>
+    
     <script>
+
       var param = {};
       window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {param[key] = value;});
       var midi = param.midi;
       var info = param.info;
+      var ssTime = param.sstime;
+
       
       var bgr = param.img||"https://4.bp.blogspot.com/-Z4sve3fJ7to/W5DdH1aFU2I/AAAAAAAACd8/MpQG3ZbI-V4g5m7BmCGnnSb-8Dr6pp4jgCLcBGAs/s1600/most-beautiful-waterfall-iceland-seljalandsfoss.jpg";
       bgr = decodeURIComponent(bgr);
@@ -58,7 +62,6 @@
           var header = fn;
           getText(Text, function(txt){
             var article = txt;
-            //var article = txt.replace(/ /g,"&nbsp");
             document.getElementById("Info").getElementsByTagName("header")[0].textContent=header;
             document.getElementById("Info").getElementsByTagName("article")[0].innerHTML=article;
         
@@ -78,7 +81,6 @@
           midi = decodeURIComponent(midi);
           var header = midi.split("/").pop().replace('.'+midi.split(".").pop(),'');
           
-          //console.log(header)
           GetMidiLyrics(midi,function(data){
             var lyr='';
             var midiFile = new MIDIFile(data);
@@ -90,7 +92,6 @@
             if(lyr.length>1){
               
               var article = lyr.replace(/\/\\/g,'').replace(/\\/g,'<br><br>').replace(/\//g,'<br>'); 
-              //console.log(lyr.replace(/\\/g,'').replace(/\//g,'\n')); // The text content to be displayed
               document.getElementById("Info").getElementsByTagName("header")[0].textContent=header;
               document.getElementById("Info").getElementsByTagName("article")[0].innerHTML=article;
             }
@@ -103,12 +104,15 @@
       if(!midi&&!info){
         alert("How To Use:: PlayMidi.html?midi=midiURL&img=imageURL&info=infoText|infoFileTextURL\n1. midi: midiURL or karURL or rmiURL\n2. img: imageURL - jpg or gif or png\n3. info: infoText - header title :: article linefeed with '\\n' or  infoFileTextURL - file.txt or selflyrics~~ or selflyrics!! selflyrics// get midi lyric if any ")
       }
+       
+      var ifrm=document.createElement("iframe");ifrm.name="iframes";ifrm.frameborder="0";ifrm.setAttribute("frameBorder", "0");ifrm.style=`position:fixed;bottom:0;left:0;max-width:40%;max-height:35px;display:;opacity:0.9`;document.body.appendChild(ifrm);var base="";var a_arr=document.getElementsByTagName("a");var hrefMid=[];var hrefContent=[];var midis=[];for(var i=0;i<a_arr.length;i++){hrefContent[i]=a_arr[i].href;hrefMid[i] = hrefContent[i].split('.').pop();if(hrefMid[i]==="mid"||hrefMid[i]==="MID"||hrefMid[i]==="kar"||hrefMid[i]==="KAR"||hrefMid[i]==="midi"||hrefMid[i]==="MIDI") {midis[i]=hrefContent[i];a_arr[i].target="iframes";a_arr[i].href="index.html?"+base+midis[i]}else{a_arr[i].target="_blank";};}
     
     </script>  
   
   
   </body>
   
+  <script src="js/ssTrigger.js"></script>
+  <script>ssTimer = ssTime</script>
   
-  <script src="js/toIframe.js"></script>
 </html>
