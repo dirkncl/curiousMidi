@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title></title><script src="js/getMidiLyrics.js"></script>
+  </head>
+  
+  <body>
+    <script>
+      var param = {};
+      window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {param[key] = value;});
+      var midi = param.midi;
+      var info = param.info;
+      
+      var bgr = param.img||"https://4.bp.blogspot.com/-Z4sve3fJ7to/W5DdH1aFU2I/AAAAAAAACd8/MpQG3ZbI-V4g5m7BmCGnnSb-8Dr6pp4jgCLcBGAs/s1600/most-beautiful-waterfall-iceland-seljalandsfoss.jpg";
+      bgr = decodeURIComponent(bgr);
+      document.body.style = `
+          background: url(${bgr}) no-repeat center center fixed; 
+          -webkit-background-size: contain;
+          -moz-background-size: contain;
+          -o-background-size: contain;
+          background-size: contain;
+          background-color: black;
+      `;
+       document.body.innerHTML='';  
+      if(midi){
+        midi = decodeURIComponent(midi);
+        document.title = midi.split("/").pop();
+        document.body.innerHTML+='<center><button style="position:fixed;top:0;z-index:10;"><a id="playmidi" style="text-decoration:none">Play</a></button></center>';
+        document.getElementById("playmidi").href = midi;
+      }
+      
+      if(info){
+        (sty=document.createElement("style")).textContent='#info::-webkit-scrollbar {height: 8px;width: 8px;background: #404040;}#info::-webkit-scrollbar-thumb{background: #909090;border-radius: 4ex;}#info ::-webkit-scrollbar-corner{background: #000;}',document.head.appendChild(sty)
+        document.body.innerHTML+='<div id="Info" style="position:fixed;max-height:60%;max-width:30%;left:35%;right:35%;bottom:10px;z-index:10;overflow-y:auto;overflow-x:visible;background-color:black;opacity:0.7"><center><header style="background-color:blue;color:ivory"></header></center><article style="color:gold;padding:10px;"></article></div>';
+        
+        var Text = decodeURIComponent(info);
+        
+        if(Text.includes("file::")){
+          Text = Text.split("::")[1];
+          var ext = Text.split(".").pop();
+          var filename = Text.split("/").pop();
+          var fn = filename.replace("."+ext,"");
+          function getText(url,cb){
+            var result="";
+            var xr = new XMLHttpRequest();
+            //xr.overrideMimeType("text/plain; charset=iso-8859-1");
+            xr.overrideMimeType("text/plain; charset=utf-8");
+            xr.onload = function() {
+              var res =xr.responseText.split("\n");
+              for(var i = 0;i<res.length;i++){
+                result = result + res[i]+"<br>"
+              }
+              cb(result)
+            };
+            xr.open("GET", url, true);
+            xr.send();
+          }
+          var header = fn;
+          getText(Text, function(txt){
+            var article = txt;
+            //var article = txt.replace(/ /g,"&nbsp");
+            document.getElementById("Info").getElementsByTagName("header")[0].textContent=header;
+            document.getElementById("Info").getElementsByTagName("article")[0].innerHTML=article;
+        
+          })
+        
+        }
+        else if(Text.includes("::")){
+          var header = Text.split('::')[0];
+          var artcl = Text.split('::')[1];
+          var article = artcl.replace(/\\n/g,"<br>");
+        
+          document.getElementById("Info").getElementsByTagName("header")[0].textContent=header;
+          document.getElementById("Info").getElementsByTagName("article")[0].innerHTML=article;
+        }
+        
+        else if(Text.includes("selflyrics~~")||Text.includes("selflyrics!!")||Text.includes("selflyrics//")){
+          midi = decodeURIComponent(midi);
+          var header = midi.split("/").pop().replace('.'+midi.split(".").pop(),'');
+          
+          //console.log(header)
+          GetMidiLyrics(midi,function(data){
+            var lyr='';
+            var midiFile = new MIDIFile(data);
+            var lyrics = midiFile.getLyrics();
+            
+            for (var idx = 0; idx < lyrics.length; idx++) {
+              lyr+=lyrics[idx].text
+            }
+            if(lyr.length>1){
+              
+              var article = lyr.replace(/\/\\/g,'').replace(/\\/g,'<br><br>').replace(/\//g,'<br>'); 
+              //console.log(lyr.replace(/\\/g,'').replace(/\//g,'\n')); // The text content to be displayed
+              document.getElementById("Info").getElementsByTagName("header")[0].textContent=header;
+              document.getElementById("Info").getElementsByTagName("article")[0].innerHTML=article;
+            }
+          })
+          
+        
+        }
+      }
+      
+      if(!midi&&!info){
+        alert("How To Use:: PlayMidi.html?midi=midiURL&img=imageURL&info=infoText|infoFileTextURL\n1. midi: midiURL or karURL or rmiURL\n2. img: imageURL - jpg or gif or png\n3. info: infoText - header title :: article linefeed with '\\n' or  infoFileTextURL - file.txt or selflyrics~~ or selflyrics!! selflyrics// get midi lyric if any ")
+      }
+    
+    </script>  
+  
+  
+  </body>
+  
+  
+  <script src="js/toIframe.js"></script>
+</html>
