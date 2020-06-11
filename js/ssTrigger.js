@@ -6,7 +6,7 @@ function ss(screensaverTime){
      
      var ifr = document.createElement("iframe");
      //ifr.src = "screensaver/index.html";
-     ifr.src = "../MakeItDark/index.html";
+     ifr.src = "../MakeItDark/index.html?zoomFull=true&ssTime=30";
      ifr.width = window.innerWidth;
      ifr.height = window.innerHeight;
      ifr.marginwidth = "0";
