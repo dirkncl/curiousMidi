@@ -1,17 +1,12 @@
-function ss(screensaverTime, ssHTML){    
-  ScreenSaver(screensaverTime||'5', function() {
-    var mask = document.createElement("div");
-    mask.style="position:fixed;top:0;left:0;z-index:1000;width:"+window.innerWidth+"px;"+window.innerHeight+"px;";
-    for(var i = 0;i<80;i++){
-      mask.innerHTML+="<br>"
-    }  
-
+function ss(screensaverTime){    
+  ScreenSaver(screensaverTime||'30', function() {
      var msg = document.createElement("div");
      msg.style = "position:fixed;top:20px;left:40%;right:40%;color:ivory;z-index:1000"
-     msg.innerHTML = "<center>Screen Saver  Active<br>Press anykey or<br>move mouse or touch here<br></center>";
+     msg.innerHTML = "<center>Screen Saver  Active<br>Press anykey or<br>mousemove or<br>mousedown or<br>touchmove<br>back To Page</center>"
      
      var ifr = document.createElement("iframe");
-     ifr.src = ssHTML;
+     //ifr.src = "screensaver/index.html";
+     ifr.src = "../MakeItDark/index.html?zoomFull=true&ssTime=30";
      ifr.width = window.innerWidth;
      ifr.height = window.innerHeight;
      ifr.marginwidth = "0";
@@ -25,15 +20,13 @@ function ss(screensaverTime, ssHTML){
      
      var div = document.createElement("div");
      div.id="ssav";
-     div.style = "background-color:#000000;overflow-x: hidden;overflow-y: hidden;z-index:1";
+     div.style = "background-color:#000000;overflow-x: hidden;overflow-y: hidden;z-index:10";
      div.appendChild(ifr);
      div.appendChild(msg);
-     div.appendChild(mask);
      document.body.insertBefore(div, document.body.firstChild);
   }, function() {
       document.getElementById("ssav").remove()
   });
-  
   
   
   function ScreenSaver(TimeInSecond, callback, backToPage) {
@@ -66,8 +59,8 @@ function ss(screensaverTime, ssHTML){
   }
 }
 var ssTimer;
-var ssHTML;
+
 window.onload = function(){
-  return ss(ssTimer, ssHTML)
+  return ss(ssTimer)
 }
 
