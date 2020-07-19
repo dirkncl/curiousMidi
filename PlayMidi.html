@@ -93,9 +93,13 @@
         }
         
         else if(Text.includes("selflyrics~~")||Text.includes("selflyrics!!")||Text.includes("selflyrics//")){
+          Text = Text.replace(RegExp('selflyrics~~'.slice(10),"g"),"")
+                     .replace(RegExp('selflyrics!!'.slice(10),"g"),"")
+                     .replace(RegExp('selflyrics//'.slice(10),"g"),"");
+
           midi = decodeURIComponent(midi);
           var header = midi.split("/").pop().replace('.'+midi.split(".").pop(),'');
-          
+          var article;          
           GetMidiLyrics(midi,function(data){
             var lyr='';
             var midiFile = new MIDIFile(data);
@@ -105,8 +109,8 @@
               lyr+=lyrics[idx].text
             }
             if(lyr.length>1){
-              
-              var article = lyr.replace(/\/\\/g,'').replace(/\\/g,'<br><br>').replace(/\//g,'<br>'); 
+              article = lyr.replace(/\/\\/g,'').replace(/\\/g,'<br><br>').replace(/\//g,'<br>'); 
+              article = Text.replace(/selflyric/g, article);
               document.getElementById("Info").getElementsByTagName("header")[0].textContent=header;
               document.getElementById("Info").getElementsByTagName("article")[0].innerHTML=article;
             }
