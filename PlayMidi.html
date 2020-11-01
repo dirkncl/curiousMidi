@@ -16,11 +16,11 @@
             var ls = window.location.search||"?info=How to used::"+info
             var param1;
             var param2;
-            if(ls.indexOf("=../")){
+            if(ls.includes("=../")){
               param1 = ls.replace("=../","=../../")
             }
             
-            if(param1.indexOf("::../")){
+            if(param1.includes("::../")){
               param2 = param1.replace("::../","::../../")
             }
             document.write("wait...")
