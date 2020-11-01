@@ -12,12 +12,15 @@
             "4. saver: screensaver engine. ScreenSaverEngine: makeitdark or shadertoy or screensaver,<br>"+
             "&nbsp;&nbsp;slideshowTime: time for screensaver slideshow transition"+"<br><br><br><br>")
             var tSecond = 0;
+            var ls = window.location.search||"?info=How to used::"+info
             var param;
             
-            if(ls.includes("../")){
+            if(ls.indexOf("=../")){
               param = ls.replace("../","../../")
             }
-            var ls = window.location.search||"?info=How to used::"+info
+            if(ls.indexOf("::../")){
+              param = ls.replace("../","../../")
+            
             document.write("wait...")
             setTimeout(function(){location.href="PlayMidi/index.html"+param} , 1000*tSecond);
         </script>
