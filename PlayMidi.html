@@ -4,6 +4,7 @@
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript">
+            
             var info = escape("?midi=midiURL&img=imageURL&info=infoText|infoFileTextURL&saver=ScreenSaverEngine;slideshowTime<br>"+
             "1. midi: midiURL or karURL or rmiURL<br>"+
             "2. img: imageURL - jpg or gif or png<br>"+
@@ -14,15 +15,16 @@
             var tSecond = 0;
             var ls = window.location.search||"?info=How to used::"+info
             var param;
-            
             if(ls.indexOf("=../")){
               param = ls.replace("=../","=../../")
             }
             if(ls.indexOf("::../")){
               param = ls.replace("::../","::../../")
-            
+            }
+            console.log(param)
             document.write("wait...")
             setTimeout(function(){location.href="PlayMidi/index.html"+param} , 1000*tSecond);
+            
         </script>
     </head>
     <body bgcolor="black"></body>
