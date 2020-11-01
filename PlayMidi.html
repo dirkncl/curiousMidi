@@ -14,7 +14,7 @@
             var tSecond = 0;
             var param;
             
-            if(ls.indexOf("../")){
+            if(ls.includes("../")){
               param = ls.replace("../","../../")
             }
             var ls = window.location.search||"?info=How to used::"+info
