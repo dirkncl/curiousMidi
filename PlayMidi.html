@@ -14,15 +14,18 @@
             "&nbsp;&nbsp;slideshowTime: time for screensaver slideshow transition"+"<br><br><br><br>")
             var tSecond = 0;
             var ls = window.location.search||"?info=How to used::"+info
-            var param;
+            var param1;
+            var param2;
             if(ls.indexOf("=../")){
-              param = ls.replace("=../","=../../")
+              param1 = ls.replace("=../","=../../")
             }
-            if(param.indexOf("::../")){
-              param = param.replace("::../","::../../")
+            
+            if(param1.indexOf("::../")){
+              param2 = param1.replace("::../","::../../")
             }
             document.write("wait...")
-            setTimeout(function(){location.href="PlayMidi/index.html"+param} , 1000*tSecond);
+            setTimeout(function(){location.href="PlayMidi/index.html"+param2} , 1000*tSecond);
+
             
         </script>
     </head>
