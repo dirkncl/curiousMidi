@@ -7,9 +7,12 @@ function ss(screensaverTime, ssHTML){
     }  
 
      var msg = document.createElement("div");
+     var isMobile=/Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent)
      msg.style = "position:fixed;top:20px;left:40%;right:40%;color:ivory;z-index:1000"
      msg.innerHTML = "<center>Screen Saver  Active<br>Press anykey or<br>move mouse or touch here<br></center>";
-     
+     if(isMobile){
+        msg.innerHTML = "<center>Touch your screen</center>";
+     }     
      var ifr = document.createElement("iframe");
      ifr.src = ssHTML;
      ifr.width = window.innerWidth;
