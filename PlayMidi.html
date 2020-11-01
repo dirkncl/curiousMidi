@@ -18,7 +18,7 @@
             if(ls.indexOf("=../")){
               param = ls.replace("=../","=../../")
             }
-            else if(param.indexOf("::../")){
+            if(param.indexOf("::../")){
               param = param.replace("::../","::../../")
             }
             document.write("wait...")
