@@ -18,10 +18,9 @@
             if(ls.indexOf("=../")){
               param = ls.replace("=../","=../../")
             }
-            if(ls.indexOf("::../")){
-              param = ls.replace("::../","::../../")
+            else if(param.indexOf("::../")){
+              param = param.replace("::../","::../../")
             }
-            console.log(param)
             document.write("wait...")
             setTimeout(function(){location.href="PlayMidi/index.html"+param} , 1000*tSecond);
             
