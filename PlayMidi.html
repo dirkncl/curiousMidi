@@ -14,20 +14,11 @@
             "&nbsp;&nbsp;slideshowTime: time for screensaver slideshow transition"+"<br><br><br><br>")
             var tSecond = 0;
             var ls = window.location.search||"?info=How to used::"+info
-
             var param;
-            var param1;
-            var param2;
-            if(ls.indexOf("midi=../")){
-              param1 = ls.replace("midi=../","midi=../../")
+            if(ls.indexOf("../")){
+              param = ls.replace(/\.\.\//g,"../../")
             }
-            
-            if(param1.indexOf("info=file::../")){
-              param2 = param1.replace("info=file::../","info=file::../../")
-            }
-            if(param2.indexOf("img=../")){
-              param = param2.replace("img=../","img=../../")
-            }
+
             
             document.write("wait...")
             setTimeout(function(){location.href="PlayMidi/index.html"+param} , 1000*tSecond);            
