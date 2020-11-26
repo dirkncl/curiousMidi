@@ -12,7 +12,9 @@
 
       var param = {};
       var isMobile=/Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent)
-      window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {param[key] = value;});
+      //window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {param[key] = value;});
+      var lhref = window.location.href.replace(/\+/g," ")
+      lhref.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {param[key] = value;})
       var midi = param.midi;
       var info = param.info;
       var ssTime = param.sstime;
