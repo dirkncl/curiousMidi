@@ -71,10 +71,14 @@
         var Text = decodeURIComponent(info);
         var omt = char_set||"utf-8";
         if(Text.includes("file::")){
-          Text = Text.split("::")[1];
-          var ext = Text.split(".").pop();
-          var filename = Text.split("/").pop();
+          var file = Text.split("file::")[1];
+          file = file.split(".txt")[0];
+          file = file+".txt"
+          var ext = file.split(".").pop();
+          var filename = file.split("/").pop();
           var fn = filename.replace("."+ext,"");
+
+          var article = Text.replace(/\\n/g,"<br>")
           function getText(url,cb){
             var result="";
             var xr = new XMLHttpRequest();
@@ -91,12 +95,11 @@
             xr.send();
           }
           var header = fn;
-          getText(Text, function(txt){
-            var article = txt;
+          getText(file, function(txt){
             document.getElementById("Info").getElementsByTagName("header")[0].textContent=header;
-            document.getElementById("Info").getElementsByTagName("article")[0].innerHTML=article;
-        
+            document.getElementById("Info").getElementsByTagName("article")[0].innerHTML = article.replace("file::"+file,txt);
           })
+          
         
         }
         else if(Text.includes("::")){
